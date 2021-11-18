@@ -19,7 +19,16 @@ resource "ibm_resource_instance" "instance" {
   tags = ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10"]
 }
 
-resource "ibm_resource_key" "resourceKey" {
+terraform {
+    required_providers {
+        ibm = {
+        source = "IBM-Cloud/ibm"
+        version = "~> 1.33.0"
+        }
+    }
+}
+
+/*resource "ibm_resource_key" "resourceKey" {
   name = "testkey"
   role = "Writer"
   resource_instance_id = "${ibm_resource_instance.instance.id}"
@@ -33,7 +42,7 @@ name = "testkey"
  resource_instance_id = "${ibm_resource_instance.instance.id}"
 }
 
-/*resource "ibm_cos_bucket" "bucket" {
+resource "ibm_cos_bucket" "bucket" {
   bucket_name           = "testmy"
   resource_instance_id  = "${ibm_resource_instance.instance.id}"
   cross_region_location = "eu"
