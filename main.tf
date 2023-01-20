@@ -16,7 +16,7 @@ variable "ibmcloud_api_key" {
 }
 
 data "ibm_resource_group" "group" {
-  name = "default"
+  name = "Default"
 }
 
 resource "ibm_resource_instance" "instance" {
