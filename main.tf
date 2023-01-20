@@ -40,11 +40,11 @@ data "ibm_resource_key" "keydata" {
 depends_on = ["ibm_resource_key.resourceKey"] 
 name = "testkey"
  resource_instance_id = "${ibm_resource_instance.instance.id}"
-}
+}*/
 
 resource "ibm_cos_bucket" "bucket" {
   bucket_name           = "testmy"
   resource_instance_id  = "${ibm_resource_instance.instance.id}"
   cross_region_location = "eu"
   storage_class         = "standard"
-}*/
+}
