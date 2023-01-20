@@ -28,14 +28,6 @@ resource "ibm_resource_instance" "instance" {
   tags = ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10"]
 }
 
-terraform {
-    required_providers {
-        ibm = {
-        source = "IBM-Cloud/ibm"
-        version = "~> 1.33.0"
-        }
-    }
-}
 
 /*resource "ibm_resource_key" "resourceKey" {
   name = "testkey"
