@@ -19,7 +19,7 @@ data "ibm_resource_group" "group" {
   name = "Default"
 }
 
-resource "ibm_resource_instance" "instance" {
+/*resource "ibm_resource_instance" "instance" {
   name              = "test"
   service           = "cloud-object-storage"
   plan              = "standard"
@@ -29,7 +29,7 @@ resource "ibm_resource_instance" "instance" {
 }
 
 
-/*resource "ibm_resource_key" "resourceKey" {
+resource "ibm_resource_key" "resourceKey" {
   name = "testkey"
   role = "Writer"
   resource_instance_id = "${ibm_resource_instance.instance.id}"
@@ -45,7 +45,7 @@ name = "testkey"
 
 resource "ibm_cos_bucket" "bucket" {
   bucket_name           = "testmy"
-  resource_instance_id  = "${ibm_resource_instance.instance.id}"
+  resource_instance_id  = "crn:v1:staging:public:cloud-object-storage:global:a/f4755e41794cfa89cb078e865975f8e5:ceb69dff-7047-42a0-8a6d-625f3d271a2e::"
   cross_region_location = "eu"
   storage_class         = "standard"
 }
